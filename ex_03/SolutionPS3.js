@@ -85,9 +85,9 @@ function checkUser(name, password) {
 //
 app.post("/auth", (req, res) => {
   let { name, password } = req.body;
-  let user = checkUser(name,password);
+  let contact = checkUser(name,password);
   // check the user name and password
-  if(contact != null && user.role == "admin") {
+  if(contact != null && contact.role == "admin") {
       let form = `<form action="/contacts" method="get">
       <label for="name">Get Contacts </label>
       <input id="token" type="hidden" name="token" value="secret-token">
